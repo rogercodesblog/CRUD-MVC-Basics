@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title>@ViewData["Title"] - MVC Crud Basics</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CrudExample.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
+    <main class="container mt-5" role="main">
+        <h1 class="text-center">
+            Contact List
+        </h1>
+        @RenderBody()
+    </main>
     <footer class="border-top footer text-muted">
         <p class="text-center">
             Made by <a class="text-center" href="https://github.com/rogercodesblog" target="_blank">RogerCodes</a>
