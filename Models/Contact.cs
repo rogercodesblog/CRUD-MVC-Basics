@@ -11,7 +11,7 @@ public class Contact
     public int Id { get; set; }
     [Required]
     [DisplayName("Name")]
-    public int Name { get; set; }
+    public string Name { get; set; }
     [Required]
     [DisplayName("Phone Number")]
     public string PhoneNumber { get; set; }
