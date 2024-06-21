@@ -486,3 +486,6 @@ $RECYCLE.BIN/
 # Visual Studio Code
 .vscode/
 .vscode/*
+
+Database.db-shm
+Database.db-wal

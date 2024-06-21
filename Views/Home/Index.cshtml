@@ -1,8 +1,56 @@
-﻿@{
+﻿@model IEnumerable<CrudExample.Models.Contact>
+
+@{
     ViewData["Title"] = "Contacts";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="d-flex">
+            <a class="btn btn-primary d-inline-block my-3 ms-auto" asp-controller="Home" asp-action="Create">Add New
+                Contact</a>
+        </div>
+
+        <h2 class="text-white bg-dark p-3 mb-0">Contacts</h2>
+
+        @if (Model.Count() > 0)
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th>@Html.DisplayNameFor(contact => contact.Name)</th>
+                            <th>@Html.DisplayNameFor(contact => contact.PhoneNumber)</th>
+                            <th>@Html.DisplayNameFor(contact => contact.Email)</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var contact in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@Html.DisplayFor(x => contact.Name)</td>
+                                <td>@Html.DisplayFor(x => contact.PhoneNumber)</td>
+                                <td>@Html.DisplayFor(x => contact.Email)</td>
+                                <td class="">
+                                    <a class="btn btn-warning" asp-controller="Home" asp-action="Edit"
+                                        asp-route-id="@contact.Id">Edit</a>
+                                    <a class="btn btn-secondary" asp-controller="Home" asp-action="Details"
+                                        asp-route-id="@contact.Id">Details</a>
+                                    <a class="btn btn-danger" asp-controller="Home" asp-action="Delete"
+                                        asp-route-id="@contact.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <h2 class="text-center my-5">There are no contacts yet.</h2>
+        }
+    </div>
 </div>

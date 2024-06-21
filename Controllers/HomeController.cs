@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CrudExample.Models;
 using CrudExample.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudExample.Controllers;
 
@@ -13,10 +14,12 @@ public class HomeController : Controller
         _database = database;
     }
 
-    public IActionResult Index()
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
-        return View();
+        return View(await _database.Contacts.ToListAsync());
     }
+
 
     [HttpGet]
     public IActionResult Create()
