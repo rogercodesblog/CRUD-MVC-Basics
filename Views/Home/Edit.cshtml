@@ -1,0 +1,40 @@
+@model CrudExample.Models.Contact
+
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-white bg-dark p-3 mb-0">Edit Contact</h2>
+
+        <form asp-controller="Home" asp-action="Edit" method="post" class="border p-3">
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Name..." />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number..." />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email..." />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group text-center">
+                <a class="btn btn-secondary d-inline-block my-3" asp-controller="Home" asp-action="Index">Cancel</a>
+                <button type="submit" class="btn btn-primary d-inline-block my-3">Edit Contact</button>
+            </div>
+
+        </form>
+    </div>
+</div>
