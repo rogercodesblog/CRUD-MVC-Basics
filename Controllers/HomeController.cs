@@ -49,14 +49,14 @@ public class HomeController : Controller
 
         if (id == null || id <= 0)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
 
         var _contact = _database.Contacts.Find(id);
 
         if (_contact == null)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
 
         return View(_contact);
@@ -80,12 +80,12 @@ public class HomeController : Controller
     {
         if (id == null)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
         var _contact = _database.Contacts.Find(id);
         if (_contact == null)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
         return View(_contact);
     }
@@ -95,13 +95,13 @@ public class HomeController : Controller
     {
         if (id == null || id <= 0)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
         var _contact = _database.Contacts.Find(id);
 
         if (_contact == null)
         {
-            return NotFound();
+            return RedirectToAction(nameof(NotFound));
         }
 
         return View(_contact);
@@ -120,6 +120,12 @@ public class HomeController : Controller
         _database.Contacts.Remove(_contact);
         await _database.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
+    }
+
+    [HttpGet]
+    public IActionResult NotFound()
+    {
+        return View();
     }
 
 }
