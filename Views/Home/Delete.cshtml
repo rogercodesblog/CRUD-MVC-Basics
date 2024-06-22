@@ -1,0 +1,42 @@
+@model CrudExample.Models.Contact
+
+@{
+    ViewData["Title"] = "Delete Contact";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-white bg-dark p-3 mb-0">Delete Contact</h2>
+
+        <form asp-controller="Home" asp-action="Delete" method="post" class="border p-3">
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Name..." readonly />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number..." readonly />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email..." readonly />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated.Date" class="form-control" placeholder="Date Created..." readonly />
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group text-center">
+                <a class="btn btn-secondary d-inline-block my-3" asp-controller="Home" asp-action="Index">Cancel</a>
+                <button type="submit" class="btn btn-danger d-inline-block my-3">Delete Contact</button>
+            </div>
+
+        </form>
+    </div>
+</div>

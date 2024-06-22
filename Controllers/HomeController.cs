@@ -90,4 +90,36 @@ public class HomeController : Controller
         return View(_contact);
     }
 
+    [HttpGet]
+    public IActionResult Delete(int? id)
+    {
+        if (id == null || id <= 0)
+        {
+            return NotFound();
+        }
+        var _contact = _database.Contacts.Find(id);
+
+        if (_contact == null)
+        {
+            return NotFound();
+        }
+
+        return View(_contact);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteContact(int? id)
+    {
+        var _contact = await _database.Contacts.FindAsync(id);
+        if (_contact == null)
+        {
+            return View();
+        }
+
+        _database.Contacts.Remove(_contact);
+        await _database.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
 }
