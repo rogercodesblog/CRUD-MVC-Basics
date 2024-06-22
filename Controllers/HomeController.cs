@@ -75,4 +75,19 @@ public class HomeController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    [HttpGet]
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+        var _contact = _database.Contacts.Find(id);
+        if (_contact == null)
+        {
+            return NotFound();
+        }
+        return View(_contact);
+    }
+
 }

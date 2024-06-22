@@ -35,10 +35,10 @@
                                 <td>@Html.DisplayFor(x => contact.PhoneNumber)</td>
                                 <td>@Html.DisplayFor(x => contact.Email)</td>
                                 <td class="">
-                                    <a class="btn btn-warning" asp-controller="Home" asp-action="Edit"
-                                        asp-route-id="@contact.Id">Edit</a>
                                     <a class="btn btn-secondary" asp-controller="Home" asp-action="Details"
                                         asp-route-id="@contact.Id">Details</a>
+                                    <a class="btn btn-warning" asp-controller="Home" asp-action="Edit"
+                                        asp-route-id="@contact.Id">Edit</a>
                                     <a class="btn btn-danger" asp-controller="Home" asp-action="Delete"
                                         asp-route-id="@contact.Id">Delete</a>
                                 </td>

@@ -19,6 +19,6 @@ public class Contact
     [EmailAddress]
     [DisplayName("E-Mail")]
     public string Email { get; set; }
-    [DisplayName("Date Added")]
+    [DisplayName("Date Created")]
     public DateTimeOffset DateCreated { get; set; }
 }
