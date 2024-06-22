@@ -9,14 +9,16 @@ public class Contact
 {
     [Key]
     public int Id { get; set; }
-    [Required]
+    [Required(ErrorMessage = "The name is required.")]
+    [MaxLength(60, ErrorMessage = "The name can't have more than 60 letters.")]
     [DisplayName("Name")]
     public string Name { get; set; }
-    [Required]
+    [Required(ErrorMessage = "The phone number is required.")]
+    [Phone(ErrorMessage = "The provided phone number is not valid.")]
     [DisplayName("Phone Number")]
     public string PhoneNumber { get; set; }
-    [Required]
-    [EmailAddress]
+    [Required(ErrorMessage = "The E-Mail is required.")]
+    [EmailAddress(ErrorMessage = "The provided E-Mail is not valid.")]
     [DisplayName("E-Mail")]
     public string Email { get; set; }
     [DisplayName("Date Created")]
