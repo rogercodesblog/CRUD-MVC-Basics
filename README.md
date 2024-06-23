@@ -1,5 +1,5 @@
 <h1 align="left">CRUD MVC Basics</h1>
-<p align="left"></p>
+<p align="left">This project was built with the intention of showing how to perform a CRUD on a MVC project on .NET.</p>
 
 > [!IMPORTANT]  
 > Please note that this project was built with the intention of showing the CRUD fundamentals while working on a MVC project under .NET, so it lacks things that you may find in other program such as pagination, search, filters, authentication, authorization, asynchronous calls and so on.
@@ -16,13 +16,13 @@
     <img src="/Screenshots/Home-Empty.png">
 </p>
 
-<p align="left">By clicking the 'Add new contact' in the home page, you'll be redirected to a page where you can create one.</p>
+<p align="left">By clicking the 'Add new contact' button in the home page, you'll be redirected to a page where you can create one.</p>
 
 <p align="center">
     <img src="/Screenshots/Create.png">
 </p>
 
-<p align="left">This forms contains validations that were set on the contact model (./Models/Contact.cs).</p>
+<p align="left">This forms contains validations that were set on the contact model (./Models/Contact.cs) using Data Annotations.</p>
 
 <p align="center">
     <img src="/Screenshots/Create-Validations.png">
